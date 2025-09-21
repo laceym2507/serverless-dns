@@ -1,4 +1,4 @@
-name: Deploy
+name: 🦕 Deno
 on:
   push:
     branches: main
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy
+    name: 🌯 Deno Deploy
     runs-on: ubuntu-latest
 
     permissions:
@@ -18,12 +18,12 @@ jobs:
       - name: Clone repository
         uses: actions/checkout@v4
 
-      - name: Install Deno
+      - name: 🦕 Install Deno
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
 
-      - name: Build step
+      - name: 📦 Build step
         run: "deno task prepare"
 
       - name: Upload to Deno Deploy
@@ -32,5 +32,3 @@ jobs:
           project: "laceym2507-serverless-63"
           entrypoint: "src/server-deno.ts"
           root: ""
-          
-          
